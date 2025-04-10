@@ -7,6 +7,7 @@ import ProtectedPage from "./components/ProtectedPage";
 import CallbackPage from "./components/CallbackPage";
 import { useAuth0 } from "@auth0/auth0-react";
 import ProfilePage from "./components/ProfilePage";
+import SessionStorageForm from "./components/SessionStorageForm";
 import AuthenticationGuard from "./components/AuthenticationGuard";
 
 
@@ -27,6 +28,10 @@ const App: React.FC = () => {
       <Route 
         path="/protected"
         element={<AuthenticationGuard component={ProtectedPage} />}
+      />
+      <Route 
+        path="/storage"
+        element={<AuthenticationGuard component={SessionStorageForm} />}
       />
       <Route path="/callback" element={<CallbackPage />} />
     </Routes>
